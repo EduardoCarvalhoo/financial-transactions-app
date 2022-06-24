@@ -35,27 +35,31 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun setupRecyclerView(result: List<ExtractItemResponse>){
+    private fun setupRecyclerView(result: List<ExtractItemResponse>) {
 
-        rv_recyclerView.layoutManager = LinearLayoutManager(this@MainActivity, RecyclerView.VERTICAL, false)
+        rv_recyclerView.layoutManager =
+            LinearLayoutManager(this@MainActivity, RecyclerView.VERTICAL, false)
         rv_recyclerView.setHasFixedSize(true)
-        rv_recyclerView.adapter = ExtractAdapter(result){ dice->
+        rv_recyclerView.adapter = ExtractAdapter(result) { dice ->
             val intent = BankStatement.getStartIntent(this@MainActivity, dice.id)
             startActivity(intent)
 
-                }
         }
+    }
 
 
-    private fun getBankDetailsMyBalance(){
+    private fun getBankDetailsMyBalance() {
 
         val extractService = RetrofitConfig.getRetrofit().getMyBalance(ExtractConfig.TOKEN)
         val call: Call<MyBalanceResponse> = extractService
 
-        call.enqueue(object: Callback<MyBalanceResponse> {
+        call.enqueue(object : Callback<MyBalanceResponse> {
 
-            override fun onResponse(call: Call<MyBalanceResponse>, response: Response<MyBalanceResponse>) {
-                if (response.isSuccessful){
+            override fun onResponse(
+                call: Call<MyBalanceResponse>,
+                response: Response<MyBalanceResponse>
+            ) {
+                if (response.isSuccessful) {
                     val myBalance: MyBalanceResponse = response.body()!!
                     textViewSaldo.text = myBalance.amount
 
@@ -68,15 +72,18 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun getBankDetailsMyStatement(){
+    private fun getBankDetailsMyStatement() {
 
         val extractService = RetrofitConfig.getRetrofit().getMyStatement(ExtractConfig.TOKEN)
         val call: Call<ExtractListResponse> = extractService
 
-        call.enqueue(object: Callback<ExtractListResponse> {
+        call.enqueue(object : Callback<ExtractListResponse> {
 
-            override fun onResponse(call: Call<ExtractListResponse>, response: Response<ExtractListResponse>) {
-                if (response.isSuccessful){
+            override fun onResponse(
+                call: Call<ExtractListResponse>,
+                response: Response<ExtractListResponse>
+            ) {
+                if (response.isSuccessful) {
                     val result = response.body()?.items
                     if (result != null) {
                         setupRecyclerView(result)
@@ -89,29 +96,33 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-    private fun configureProgressBar(){
+
+    private fun configureProgressBar() {
         handler = Handler(Handler.Callback {
             if (rv_recyclerView.adapter == null) {
                 progressStatus++
-            }else{
+            } else {
                 progressStatus = 100
                 progressBar.visibility = View.INVISIBLE
             }
             progressBar.progress = progressStatus   // A progressBar recebe os incrementos
-            handler?.sendEmptyMessageDelayed(0, 10)  // Envia uma Mensagem contendo apenas o valor que, a ser entregue após o tempo especificado.
+            handler?.sendEmptyMessageDelayed(
+                0,
+                10
+            )  // Envia uma Mensagem contendo apenas o valor que, a ser entregue após o tempo especificado.
 
             true
         })
         handler?.sendEmptyMessage(0)
     }
 
-    fun settingBalanceVisibility(){
+    fun settingBalanceVisibility() {
         activity_main_button_visibility_off.setOnClickListener {
-                textViewSaldo.visibility = View.VISIBLE
-                progressBarVisibilitySaldo.visibility = View.INVISIBLE
-                activity_main_button_visibility_off.visibility = View.INVISIBLE
-                activity_main_button_visibility.visibility = View.VISIBLE
-            }
+            textViewSaldo.visibility = View.VISIBLE
+            progressBarVisibilitySaldo.visibility = View.INVISIBLE
+            activity_main_button_visibility_off.visibility = View.INVISIBLE
+            activity_main_button_visibility.visibility = View.VISIBLE
+        }
         activity_main_button_visibility.setOnClickListener {
             textViewSaldo.visibility = View.INVISIBLE
             progressBarVisibilitySaldo.visibility = View.VISIBLE
@@ -120,10 +131,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
     }
-
-
 
 
 }
