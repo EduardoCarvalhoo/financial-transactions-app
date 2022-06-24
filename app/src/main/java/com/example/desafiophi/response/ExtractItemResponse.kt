@@ -1,6 +1,6 @@
-package com.example.desafiophi.model
+package com.example.desafiophi.response
 
-class ExtractItem(
+data class ExtractItemResponse(
     val from: String?,
     val tType: String?,
     val createdAt: String?,

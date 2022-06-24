@@ -1,6 +1,6 @@
-package com.example.desafiophi.model
+package com.example.desafiophi.response
 
-import com.example.desafiophi.ExtractConfig
+import com.example.desafiophi.utils.ExtractConfig
 import com.example.desafiophi.api.ExtractService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,8 +13,6 @@ class RetrofitConfig {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(ExtractService::class.java)
             return retrofit
-
-
         }
     }
 }

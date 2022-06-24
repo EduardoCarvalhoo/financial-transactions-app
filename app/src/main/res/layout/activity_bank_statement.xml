@@ -4,155 +4,166 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BankDetailsReceipt">
+    tools:context=".ui.BankStatement">
 
 
     <TextView
-        android:id="@+id/textViewDigits"
+        android:id="@+id/bankStatement_AuthenticationField_TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="11dp"
-        android:layout_marginEnd="9dp"
-        android:text="@string/Digits"
+        android:layout_marginEnd="20dp"
         android:textColor="#202021"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/bankStatement_Autenticação_TextView"
+        tools:ignore="MissingConstraints"
+        tools:text="@string/Digits" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/bankStatement_Autenticação_TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/autentica_o"
         android:textColor="#202021"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textDateTime" />
+        app:layout_constraintTop_toBottomOf="@+id/bankStatement_DateTimeField_TextView"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/bankStatement_DataHora_TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/data_hora1"
         android:textColor="#202021"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textName" />
+        app:layout_constraintTop_toBottomOf="@+id/bankStatement_NameField_TextView"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textDateTime"
+        android:id="@+id/bankStatement_DateTimeField_TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="11dp"
-        android:layout_marginEnd="9dp"
-        android:text="@string/DateTime"
+        android:layout_marginEnd="20dp"
         android:textColor="#202021"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/bankStatement_DataHora_TextView"
+        tools:ignore="MissingConstraints"
+        tools:text="@string/DateTime" />
 
     <TextView
-        android:id="@+id/textName"
+        android:id="@+id/bankStatement_NameField_TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="11dp"
-        android:layout_marginEnd="9dp"
-        android:text="@string/Name"
+        android:layout_marginEnd="20dp"
         android:textColor="#202021"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTo" />
+        app:layout_constraintTop_toBottomOf="@+id/bankStatement_RecebedorPagador_TextView"
+        tools:ignore="MissingConstraints"
+        tools:text="@string/Name" />
 
     <TextView
-        android:id="@+id/textViewTo"
+        android:id="@+id/bankStatement_RecebedorPagador_TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/recebedor_pagador"
         android:textColor="#202021"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textValue" />
+        app:layout_constraintTop_toBottomOf="@+id/bankStatement_AmountField_TextView"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/bankStatement_Valor_TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="31dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/valor"
         android:textColor="#202021"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTransfer" />
+        app:layout_constraintTop_toBottomOf="@+id/bankStatement_StatusField_TextView"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textValue"
+        android:id="@+id/bankStatement_AmountField_TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="9dp"
-        android:text="@string/status1"
+        android:layout_marginEnd="20dp"
         android:textColor="#202021"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/bankStatement_Valor_TextView"
+        tools:ignore="MissingConstraints"
+        tools:text="@string/Amount" />
 
     <TextView
-        android:id="@+id/textViewComprovante"
+        android:id="@+id/bankStatement_Comprovante_TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/comprovante"
-        android:textSize="17sp"
         android:textColor="#202021"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/bankStatement_Movimentação_TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/tipo_de_movimenta_o"
         android:textColor="#202021"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewComprovante" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textTransfer"
+        android:id="@+id/bankStatement_StatusField_TextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="9dp"
-        android:text="@string/status"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="20dp"
         android:textColor="#202021"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+        app:layout_constraintTop_toBottomOf="@+id/bankStatement_Movimentação_TextView"
+        tools:ignore="MissingConstraints"
+        tools:text="@string/status" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.desafiophi
+package com.example.desafiophi.utils
 
 class ExtractConfig {
 

@@ -30,4 +30,5 @@
     <string name="Name1">Name</string>
     <string name="Date">Date</string>
     <string name="Value">Value</string>
+    <string name="Amount">Amount</string>
 </resources>

@@ -1,21 +1,24 @@
 package com.example.desafiophi.api
 
-import com.example.desafiophi.model.ExtractList
-import com.example.desafiophi.model.MyBalance
+import com.example.desafiophi.response.ExtractItemDetailResponse
+import com.example.desafiophi.response.ExtractListResponse
+import com.example.desafiophi.response.MyBalanceResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
+import retrofit2.http.Path
+
 
 interface ExtractService {
 
     @GET("myBalance")
-    fun getMyBalance(@Header("token")token: String): Call<MyBalance>
+    fun getMyBalance(@Header("token")token: String): Call<MyBalanceResponse>
 
     @GET("myStatement/10/0")
-    fun getMyStatement(@Header("token")token: String ): Call<ExtractList>
+    fun getMyStatement(@Header("token")token: String ): Call<ExtractListResponse>
 
     @GET("myStatement/detail/{id}")
-    fun getMyStatementDetail(@Header("token") token: String, @Header("id") id: String?): Call<ExtractList>
+    fun getMyStatementDetail(@Header("token") token: String, @Path("id") id: String?): Call<ExtractItemDetailResponse>
 
 
 }
