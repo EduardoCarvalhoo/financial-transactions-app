@@ -1,7 +1,6 @@
 package com.example.desafiophi.ui
 
 
-import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -10,17 +9,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiophi.R
 import com.example.desafiophi.adapter.ExtractAdapter
-import com.example.desafiophi.response.*
+import com.example.desafiophi.response.ExtractItemResponse
+import com.example.desafiophi.response.ExtractListResponse
+import com.example.desafiophi.response.MyBalanceResponse
+import com.example.desafiophi.response.RetrofitConfig
 import com.example.desafiophi.utils.ExtractConfig
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
-    var progressStatus = 5
     var handler: Handler? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView(result: List<ExtractItemResponse>) {
-
-        rv_recyclerView.layoutManager =
-            LinearLayoutManager(this@MainActivity, RecyclerView.VERTICAL, false)
+        rv_recyclerView.layoutManager = LinearLayoutManager(
+            this@MainActivity, RecyclerView.VERTICAL, false
+        )
         rv_recyclerView.setHasFixedSize(true)
         rv_recyclerView.adapter = ExtractAdapter(result) { dice ->
             val intent = BankStatement.getStartIntent(this@MainActivity, dice.id)
@@ -99,24 +99,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun configureProgressBar() {
         handler = Handler(Handler.Callback {
-            if (rv_recyclerView.adapter == null) {
-                progressStatus++
-            } else {
-                progressStatus = 100
+            if (rv_recyclerView.adapter != null) {
                 progressBar.visibility = View.INVISIBLE
             }
-            progressBar.progress = progressStatus   // A progressBar recebe os incrementos
-            handler?.sendEmptyMessageDelayed(
-                0,
-                10
-            )  // Envia uma Mensagem contendo apenas o valor que, a ser entregue após o tempo especificado.
+            handler?.sendEmptyMessageDelayed(0, 100)
 
             true
         })
+
         handler?.sendEmptyMessage(0)
     }
 
-    fun settingBalanceVisibility() {
+    private fun settingBalanceVisibility() {
+
         activity_main_button_visibility_off.setOnClickListener {
             textViewSaldo.visibility = View.VISIBLE
             progressBarVisibilitySaldo.visibility = View.INVISIBLE

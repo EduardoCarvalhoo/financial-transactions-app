@@ -3,10 +3,11 @@ package com.example.desafiophi.ui
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.desafiophi.R
+import com.example.desafiophi.TransferOptions
 import com.example.desafiophi.response.ExtractItemDetailResponse
 import com.example.desafiophi.response.RetrofitConfig
 import com.example.desafiophi.utils.ExtractConfig
@@ -84,9 +85,7 @@ class BankStatement : AppCompatActivity() {
 
         if (actionBar != null) {
 
-            // Personaliza o botão voltar
             actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_24)
-            // mostrando o botão voltar na barra de ação
             actionBar.setDisplayHomeAsUpEnabled(true)
         }
     }
@@ -95,16 +94,12 @@ class BankStatement : AppCompatActivity() {
         
         val to = findViewById<TextView>(R.id.bankStatement_RecebedorPagador_TextView)
 
-        if (item.tType.equals("TRANSFEROUT")){
-            to.text = "Recebedor"
-        }else if (item.tType.equals("TRANSFERIN")){
-            to.text = "Pagador"
-        }else if (item.tType.equals("PIXCASHIN")){
-            to.text = "Pagador"
-        }else if(item.tType.equals("PIXCASHOUT")){
-            to.text = "Recebedor"
-        }else if (item.tType.equals("BANKSLIPCASHIN")){
-            to.text = "Pagador"
+        when(item.tType){
+            TransferOptions.TRANSFEROUT.toString() -> to.text = TransferOptions.RECEIVER.transferOptions
+            TransferOptions.TRANSFERIN.toString() -> to.text = TransferOptions.PAYER.transferOptions
+            TransferOptions.PIXCASHIN.toString() -> to.text = TransferOptions.PAYER.transferOptions
+            TransferOptions.PIXCASHOUT.toString() -> to.text = TransferOptions.RECEIVER.transferOptions
+            TransferOptions.BANKSLIPCASHIN.toString() -> to.text = TransferOptions.PAYER.transferOptions
         }
     }
 }
