@@ -6,11 +6,17 @@
         <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1245" />
         <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1245" />
         <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/drawable/ic_baseline_visibility_24.xml" value="0.1245" />
+        <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.1935" />
         <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1245" />
+        <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/drawable/ic_visibility_off_24.xml" value="0.115" />
         <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/layout/activity_bank_detail_receipt.xml" value="0.33" />
+        <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/layout/activity_bank_details_receipt.xml" value="0.22" />
         <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/layout/activity_bank_statement.xml" value="0.25" />
-        <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/layout/transaction_list.xml" value="0.1" />
+        <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/layout/item_transaction.xml" value="0.33" />
+        <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/layout/item_voucher_details.xml" value="0.25" />
+        <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/layout/transaction_list.xml" value="0.22" />
+        <entry key="..\:/Users/eduar/AndroidStudioProjects/DesafioPhi/app/src/main/res/layout/voucher_item.xml" value="0.25" />
         <entry key="..\:/Users/eduar/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_activated_1.xml" value="0.18" />
       </map>
     </option>

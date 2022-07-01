@@ -1,34 +1,17 @@
 <resources>
-    <string name="app_name" />
-    <string name="data_hora">data/hora</string>
-    <string name="comprovante">Comprovante</string>
-    <string name="tipo_de_movimenta_o">Tipo de Movimentação</string>
-    <string name="status">Status</string>
-    <string name="valor">Valor</string>
-    <string name="nome">nome</string>
-    <string name="institui_o_banc_ria">Instituição Bancária</string>
-    <string name="recebedor_pagador">Recebedor/Pagador</string>
-    <string name="autentica_o">Autenticação</string>
-    <string name="nomebanco">nomeBanco</string>
-    <string name="digitos">digitos</string>
-    <string name="data_hora1">Data/Hora</string>
-    <string name="status1">Status</string>
-    <string name="button">Button</string>
-    <string name="extrato">Extrato</string>
-    <string name="seu_saldo">Seu saldo</string>
-    <string name="suas_movimenta_es">Suas movimentações</string>
-    <string name="name">name</string>
-    <string name="nameBank">nameBank</string>
-    <string name="dateTime">dateTime</string>
-    <string name="digits">digits</string>
-    <string name="Name">Name</string>
-    <string name="DateTime">DateTime</string>
-    <string name="Digits">Digits</string>
-    <string name="suas_movimentações">Suas movimentações</string>
-    <string name="valor1">Valor</string>
-    <string name="Status">Status</string>
-    <string name="Name1">Name</string>
-    <string name="Date">Date</string>
-    <string name="Value">Value</string>
-    <string name="Amount">Amount</string>
+
+
+    <string name="bank_statement_voucher_text">Comprovante</string>
+    <string name="bank_statement_type_of_movement_text">Tipo de movimentação</string>
+    <string name="main_extract_title_toolbar">Extrato</string>
+    <string name="main_my_balance_text">Seu saldo</string>
+    <string name="main_movements_text">Suas movimentações</string>
+    <string name="main_change_balance_visibility_content_description">Botão selecionado ocultar saldo</string>
+    <string name="item_transaction_pix_text">Pix</string>
+    <string name="item_voucher_details_transfer_value_text">Valor</string>
+    <string name="item_voucher_details_payer_receiver_text">Pagador/Recebedor</string>
+    <string name="item_voucher_details_date_time_text">Data/Hora</string>
+    <string name="item_voucher_details_authentication_text">Autenticação</string>
+
+
 </resources>

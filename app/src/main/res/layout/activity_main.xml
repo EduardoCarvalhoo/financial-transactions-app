@@ -6,135 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/main_extract_title_toolbar" />
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/main_header_background_view"
         android:layout_width="0dp"
-        android:layout_height="86dp"
-        android:background="#F8F8F8"
+        android:layout_height="80dp"
+        android:background="@color/light_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="51dp" />
+        app:layout_constraintTop_toBottomOf="@+id/main_toolbar" />
 
     <TextView
-        android:id="@+id/textViewSaldo"
+        android:id="@+id/main_balance_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="43dp"
-        android:text="@string/valor1"
-        android:visibility="invisible"
-        android:textColor="#00C1AF"
+        android:layout_marginHorizontal="20dp"
+        android:textColor="@color/dark_cyan"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/main_header_background_view"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/main_title_balance_text_view"
+        tools:text="1234"/>
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/main_title_balance_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:text="@string/seu_saldo"
-        android:textColor="#202021"
+        android:layout_marginTop="16dp"
+        android:text="@string/main_my_balance_text"
+        android:textColor="@color/dark_magenta_blue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintTop_toTopOf="@+id/main_header_background_view" />
 
-    <Button
-        android:id="@+id/activity_main_button_visibility"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="31dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:paddingEnd="20dp"
-        app:icon="@drawable/ic_baseline_visibility_24"
-        android:visibility="invisible"
-        app:iconGravity="textEnd"
-        app:iconPadding="9dp"
+    <ImageButton
+        android:id="@+id/main_visibility_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/main_change_balance_visibility_content_description"
+        android:padding="8dp"
+        android:src="@drawable/ic_visibility_off_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView1"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        tools:ignore="RtlSymmetry" />
-
-    <Button
-        android:id="@+id/activity_main_button_visibility_off"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="31dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:paddingEnd="20dp"
-        app:icon="@drawable/ic_baseline_visibility_off_24"
-        app:iconGravity="textEnd"
-        app:iconPadding="9dp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView1"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        tools:ignore="RtlSymmetry" />
+        app:layout_constraintStart_toEndOf="@+id/main_title_balance_text_view"
+        app:layout_constraintTop_toTopOf="@+id/main_header_background_view" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_recyclerView"
-        android:layout_width="0dp"
+        android:id="@+id/main_recycler_view"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        tools:listitem="@android:layout/simple_list_item_activated_1"/>
+        app:layout_constraintTop_toBottomOf="@+id/main_movements_text_view"
+        tools:listitem="@layout/item_transaction" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/main_movements_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="@string/suas_movimentações"
-        android:textColor="#202021"
+        android:text="@string/main_movements_text"
+        android:textColor="@color/dark_magenta_blue"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/rv_recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/main_header_background_view" />
 
     <ProgressBar
-        android:id="@+id/progressBarVisibilitySaldo"
+        android:id="@+id/main_hide_balance_progress_bar"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="131dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="13dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
         android:max="10"
         android:progress="10"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintBottom_toBottomOf="@+id/main_header_background_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+        app:layout_constraintTop_toBottomOf="@+id/main_title_balance_text_view" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/main_progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rv_recyclerView" />
+        app:layout_constraintTop_toTopOf="@+id/main_recycler_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

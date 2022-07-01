@@ -5,6 +5,11 @@
     <color name="purple_700">#202021</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FF00C1AF</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dark_magenta_blue">#202021</color>
+    <color name="dark_cyan">#00C1AF</color>
+    <color name="light_grey">#F8F8F8</color>
+    <color name="dark_grey">#828282</color>
+
 </resources>

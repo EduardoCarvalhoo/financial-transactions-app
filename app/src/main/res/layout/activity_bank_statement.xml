@@ -4,166 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.BankStatement">
+    tools:context=".ui.BankStatementActivity">
 
 
-    <TextView
-        android:id="@+id/bankStatement_AuthenticationField_TextView"
-        android:layout_width="0dp"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bank_statement_toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="20dp"
-        android:textColor="#202021"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bankStatement_Autenticação_TextView"
-        tools:ignore="MissingConstraints"
-        tools:text="@string/Digits" />
-
-    <TextView
-        android:id="@+id/bankStatement_Autenticação_TextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/autentica_o"
-        android:textColor="#202021"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bankStatement_DateTimeField_TextView"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/bankStatement_DataHora_TextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/data_hora1"
-        android:textColor="#202021"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bankStatement_NameField_TextView"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/bankStatement_DateTimeField_TextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="20dp"
-        android:textColor="#202021"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bankStatement_DataHora_TextView"
-        tools:ignore="MissingConstraints"
-        tools:text="@string/DateTime" />
-
-    <TextView
-        android:id="@+id/bankStatement_NameField_TextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="20dp"
-        android:textColor="#202021"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bankStatement_RecebedorPagador_TextView"
-        tools:ignore="MissingConstraints"
-        tools:text="@string/Name" />
-
-    <TextView
-        android:id="@+id/bankStatement_RecebedorPagador_TextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/recebedor_pagador"
-        android:textColor="#202021"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bankStatement_AmountField_TextView"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/bankStatement_Valor_TextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/valor"
-        android:textColor="#202021"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bankStatement_StatusField_TextView"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/bankStatement_AmountField_TextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:textColor="#202021"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bankStatement_Valor_TextView"
-        tools:ignore="MissingConstraints"
-        tools:text="@string/Amount" />
-
-    <TextView
-        android:id="@+id/bankStatement_Comprovante_TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/comprovante"
-        android:textColor="#202021"
-        android:textSize="17sp"
-        android:textStyle="bold"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+
+        />
 
     <TextView
-        android:id="@+id/bankStatement_Movimentação_TextView"
-        android:layout_width="0dp"
+        android:id="@+id/bank_statement_title_text_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="74dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/tipo_de_movimenta_o"
-        android:textColor="#202021"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/bank_statement_voucher_text"
+        android:textColor="@color/dark_magenta_blue"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/bank_statement_toolbar" />
 
     <TextView
-        android:id="@+id/bankStatement_StatusField_TextView"
-        android:layout_width="0dp"
+        android:id="@+id/bank_statement_type_of_movement_text_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="20dp"
-        android:textColor="#202021"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/bank_statement_type_of_movement_text"
+        android:textColor="@color/dark_magenta_blue"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bankStatement_Movimentação_TextView"
-        tools:ignore="MissingConstraints"
-        tools:text="@string/status" />
+        app:layout_constraintTop_toBottomOf="@+id/bank_statement_title_text_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bank_statement_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bank_statement_type_of_movement_text_view"
+        tools:listitem="@layout/item_voucher_details" />
+
+    <ProgressBar
+        android:id="@+id/bank_statement_progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bank_statement_recycler_view"
+        app:layout_constraintStart_toStartOf="@+id/bank_statement_recycler_view"
+        app:layout_constraintTop_toBottomOf="@+id/bank_statement_type_of_movement_text_view" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

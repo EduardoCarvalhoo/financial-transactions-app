@@ -5,21 +5,22 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isInvisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiophi.R
 import com.example.desafiophi.response.ExtractItemResponse
-import kotlinx.android.synthetic.main.transaction_list.view.*
+import com.example.desafiophi.utils.TransferOptions
+import kotlinx.android.synthetic.main.item_transaction.view.*
 import java.text.SimpleDateFormat
 
 
-class ExtractAdapter (
+class ExtractAdapter(
     private var items: List<ExtractItemResponse>,
-    private val onItemClickListener: ((dice: ExtractItemResponse) -> Unit))
-    : RecyclerView.Adapter<ExtractAdapter.BankTransactionsViewHolder>(){
+    private val onItemClickListener: ((dice: ExtractItemResponse) -> Unit)
+) : RecyclerView.Adapter<ExtractAdapter.BankTransactionsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BankTransactionsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.transaction_list, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_transaction, parent, false)
         return BankTransactionsViewHolder(view, onItemClickListener)
     }
 
@@ -33,15 +34,16 @@ class ExtractAdapter (
     }
 
 
-    class BankTransactionsViewHolder(itemView: View,
-        private val onItemClickListener: (dice: ExtractItemResponse) -> Unit)
-        : RecyclerView.ViewHolder(itemView) {
+    class BankTransactionsViewHolder(
+        itemView: View,
+        private val onItemClickListener: (dice: ExtractItemResponse) -> Unit
+    ) : RecyclerView.ViewHolder(itemView) {
 
-        private val status = itemView.textViewStatus
-        private val value = itemView.textViewValue
-        private val name = itemView.textViewName
-        private val date = itemView.textViewDate
-        private val pix = itemView.transaction_list_Pix_TextView
+        private val status = itemView.item_transaction_status_text_view
+        private val value = itemView.item_transaction_value_text_view
+        private val name = itemView.item_transaction_name_text_view
+        private val date = itemView.item_trasaction_date_text_view
+        private val pix = itemView.item_transaction_pix_text_view
 
 
         fun bindView(dice: ExtractItemResponse) {
@@ -62,8 +64,9 @@ class ExtractAdapter (
         }
 
 
-        fun configurePixTransaction(dice: ExtractItemResponse){
-            if (dice.tType.equals("PIXCASHIN") || dice.tType.equals("PIXCASHOUT")) {
+        fun configurePixTransaction(dice: ExtractItemResponse) {
+            if (dice.tType.equals(TransferOptions.PIXCASHIN.transferOptions) || dice.tType.equals(
+                    TransferOptions.PIXCASHOUT.transferOptions)) {
                 itemView.setBackgroundColor(Color.parseColor("#F8F8F8"))
                 pix.visibility = View.VISIBLE
             }

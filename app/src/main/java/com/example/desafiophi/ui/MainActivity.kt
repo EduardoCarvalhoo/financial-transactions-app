@@ -22,6 +22,7 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     var handler: Handler? = null
+    var showListener: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +37,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView(result: List<ExtractItemResponse>) {
-        rv_recyclerView.layoutManager = LinearLayoutManager(
+        main_recycler_view.layoutManager = LinearLayoutManager(
             this@MainActivity, RecyclerView.VERTICAL, false
         )
-        rv_recyclerView.setHasFixedSize(true)
-        rv_recyclerView.adapter = ExtractAdapter(result) { dice ->
-            val intent = BankStatement.getStartIntent(this@MainActivity, dice.id)
+        main_recycler_view.setHasFixedSize(true)
+        main_recycler_view.adapter = ExtractAdapter(result) { dice ->
+            val intent = BankStatementActivity.getStartIntent(this@MainActivity, dice.id)
             startActivity(intent)
 
         }
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     val myBalance: MyBalanceResponse = response.body()!!
-                    textViewSaldo.text = myBalance.amount
+                    main_balance_text_view.text = myBalance.amount
 
                 }
             }
@@ -99,8 +100,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun configureProgressBar() {
         handler = Handler(Handler.Callback {
-            if (rv_recyclerView.adapter != null) {
-                progressBar.visibility = View.INVISIBLE
+            if (main_recycler_view.adapter != null) {
+                main_progressBar.visibility = View.INVISIBLE
             }
             handler?.sendEmptyMessageDelayed(0, 100)
 
@@ -112,21 +113,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun settingBalanceVisibility() {
 
-        activity_main_button_visibility_off.setOnClickListener {
-            textViewSaldo.visibility = View.VISIBLE
-            progressBarVisibilitySaldo.visibility = View.INVISIBLE
-            activity_main_button_visibility_off.visibility = View.INVISIBLE
-            activity_main_button_visibility.visibility = View.VISIBLE
-        }
-        activity_main_button_visibility.setOnClickListener {
-            textViewSaldo.visibility = View.INVISIBLE
-            progressBarVisibilitySaldo.visibility = View.VISIBLE
-            activity_main_button_visibility_off.visibility = View.VISIBLE
-            activity_main_button_visibility.visibility = View.INVISIBLE
-        }
+        main_visibility_image_button.setOnClickListener {
 
-
+            if (showListener) {
+                main_balance_text_view.visibility = View.VISIBLE
+                main_hide_balance_progress_bar.visibility = View.GONE
+                main_visibility_image_button.setImageResource(R.drawable.ic_baseline_visibility_24)
+                showListener = false
+            } else {
+                main_balance_text_view.visibility = View.GONE
+                main_hide_balance_progress_bar.visibility = View.VISIBLE
+                main_visibility_image_button.setImageResource(R.drawable.ic_visibility_off_24)
+                showListener = true
+            }
+        }
     }
-
-
 }
+
