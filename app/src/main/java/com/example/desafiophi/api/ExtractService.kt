@@ -21,4 +21,5 @@ interface ExtractService {
     fun getMyStatementDetail(@Header("token") token: String, @Path("id") id: String?): Call<ExtractItemDetailResponse>
 
 
+
 }
