@@ -1,15 +1,14 @@
 package com.example.desafiophi.adapter
 
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiophi.R
+import com.example.desafiophi.databinding.ItemTransactionBinding
 import com.example.desafiophi.response.ExtractItemResponse
 import com.example.desafiophi.utils.TransferOptions
-import kotlinx.android.synthetic.main.item_transaction.view.*
 import java.text.SimpleDateFormat
 
 
@@ -19,8 +18,9 @@ class ExtractAdapter(
 ) : RecyclerView.Adapter<ExtractAdapter.BankTransactionsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BankTransactionsViewHolder {
+
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_transaction, parent, false)
+            ItemTransactionBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return BankTransactionsViewHolder(view, onItemClickListener)
     }
 
@@ -33,26 +33,23 @@ class ExtractAdapter(
         return items.size
     }
 
-
     class BankTransactionsViewHolder(
-        itemView: View,
+        binding: ItemTransactionBinding,
         private val onItemClickListener: (dice: ExtractItemResponse) -> Unit
-    ) : RecyclerView.ViewHolder(itemView) {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-        private val status = itemView.item_transaction_status_text_view
-        private val value = itemView.item_transaction_value_text_view
-        private val name = itemView.item_transaction_name_text_view
-        private val date = itemView.item_trasaction_date_text_view
-        private val pix = itemView.item_transaction_pix_text_view
-
+        private val status = binding.itemTransactionStatusTextView
+        private val value = binding.itemTransactionValueTextView
+        private val name = binding.itemTransactionNameTextView
+        private val date = binding.itemTrasactionDateTextView
+        private val pix = binding.itemTransactionPixTextView
 
         fun bindView(dice: ExtractItemResponse) {
 
             status.text = dice.description
             value.text = dice.amount
             name.text = dice.to
-            val data = dice.createdAt
-            date.text = convertDateFormart(data)
+            date.text = convertDateFormart(dice.createdAt)
 
             configurePixTransaction(dice)
 
@@ -63,22 +60,27 @@ class ExtractAdapter(
             }
         }
 
-
-        fun configurePixTransaction(dice: ExtractItemResponse) {
+        private fun configurePixTransaction(dice: ExtractItemResponse) {
             if (dice.tType.equals(TransferOptions.PIXCASHIN.transferOptions) || dice.tType.equals(
-                    TransferOptions.PIXCASHOUT.transferOptions)) {
-                itemView.setBackgroundColor(Color.parseColor("#F8F8F8"))
+                    TransferOptions.PIXCASHOUT.transferOptions
+                )
+            ) {
+                itemView.setBackgroundResource(R.color.light_grey)
                 pix.visibility = View.VISIBLE
             }
         }
 
         @SuppressLint("SimpleDateFormat")
         private fun convertDateFormart(data: String?): String {
-            val originalFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
-            val dateFormat = originalFormat.parse(data)
-            val simpleDateFormat2 = SimpleDateFormat("dd/MM")
-            return simpleDateFormat2.format(dateFormat)
+            val originalFormat = SimpleDateFormat(ORIGINAL_DATE_FORMAT)
+            val dateFormat = originalFormat.parse(data!!)
+            val convertedFormat = SimpleDateFormat(CONVERTED_FORMAT)
+            return convertedFormat.format(dateFormat!!)
+        }
+
+        companion object {
+            private const val ORIGINAL_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+            private const val CONVERTED_FORMAT = "dd/MM"
         }
     }
-
 }

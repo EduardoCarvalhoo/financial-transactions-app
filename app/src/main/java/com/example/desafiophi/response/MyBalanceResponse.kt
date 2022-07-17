@@ -1,3 +1,3 @@
 package com.example.desafiophi.response
 
-data class MyBalanceResponse(val amount: String)
+data class MyBalanceResponse(val amount: String?)

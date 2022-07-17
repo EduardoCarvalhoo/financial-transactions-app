@@ -1,17 +1,22 @@
 <resources>
 
-
+    <!-- Bank Statement -->
     <string name="bank_statement_voucher_text">Comprovante</string>
     <string name="bank_statement_type_of_movement_text">Tipo de movimentação</string>
+
+    <!-- Main -->
     <string name="main_extract_title_toolbar">Extrato</string>
     <string name="main_my_balance_text">Seu saldo</string>
     <string name="main_movements_text">Suas movimentações</string>
     <string name="main_change_balance_visibility_content_description">Botão selecionado ocultar saldo</string>
+
+    <!-- Item Transaction  -->
     <string name="item_transaction_pix_text">Pix</string>
+
+    <!-- Item Voucher Details -->
     <string name="item_voucher_details_transfer_value_text">Valor</string>
     <string name="item_voucher_details_payer_receiver_text">Pagador/Recebedor</string>
     <string name="item_voucher_details_date_time_text">Data/Hora</string>
     <string name="item_voucher_details_authentication_text">Autenticação</string>
-
 
 </resources>
