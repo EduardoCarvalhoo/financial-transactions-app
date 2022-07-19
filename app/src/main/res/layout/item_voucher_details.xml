@@ -3,112 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="20dp"
+    android:layout_height="wrap_content"
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/item_voucher_details_transfer_status_text_view"
+        android:id="@+id/item_voucher_details_title_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColor="@color/dark_magenta_blue"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Tranferência recebida" />
+        tools:text="@string/item_voucher_details_transfer_value_text" />
 
     <TextView
-        android:id="@+id/item_voucher_details_value_description_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/item_voucher_details_transfer_value_text"
-        android:textColor="@color/dark_magenta_blue"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_voucher_details_transfer_status_text_view" />
-
-    <TextView
-        android:id="@+id/item_voucher_details_transaction_amount_text_view"
+        android:id="@+id/item_voucher_details_value_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textColor="@color/dark_magenta_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_voucher_details_value_description_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/item_voucher_details_title_text_view"
         tools:text="1234" />
-
-    <TextView
-        android:id="@+id/item_voucher_details_payer_receiving_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/item_voucher_details_payer_receiver_text"
-        android:textColor="@color/dark_magenta_blue"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_voucher_details_transaction_amount_text_view" />
-
-    <TextView
-        android:id="@+id/item_voucher_details_name_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/dark_magenta_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_voucher_details_payer_receiving_text_view"
-        tools:text="Laura Sacura" />
-
-    <TextView
-        android:id="@+id/item_voucher_details_date_hour_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/item_voucher_details_date_time_text"
-        android:textColor="@color/dark_magenta_blue"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_voucher_details_name_text_view" />
-
-    <TextView
-        android:id="@+id/item_voucher_details_value_date_hour_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/dark_magenta_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_voucher_details_date_hour_text_view"
-        tools:text="22/05" />
-
-    <TextView
-        android:id="@+id/item_voucher_details_authentication_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/item_voucher_details_authentication_text"
-        android:textColor="@color/dark_magenta_blue"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_voucher_details_value_date_hour_text_view"
-
-        />
-
-    <TextView
-        android:id="@+id/item_voucher_details_authentication_value_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/dark_magenta_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_voucher_details_authentication_text_view"
-        tools:text="0555888vds4545" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
