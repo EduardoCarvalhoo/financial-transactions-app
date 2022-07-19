@@ -10,4 +10,4 @@ data class ExtractItemDetailResponse(
     val to: String?,
     val description: String?,
     val authentication: String?
-    )
+)
