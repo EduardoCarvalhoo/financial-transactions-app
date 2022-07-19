@@ -10,16 +10,14 @@ import retrofit2.http.Path
 
 
 interface ExtractService {
-
     @GET("myBalance")
-    fun getMyBalance(@Header("token")token: String): Call<MyBalanceResponse>
+    fun getMyBalance(@Header("token") token: String): Call<MyBalanceResponse>
 
     @GET("myStatement/10/0")
-    fun getMyStatement(@Header("token")token: String ): Call<ExtractListResponse>
+    fun getMyStatement(@Header("token") token: String): Call<ExtractListResponse>
 
     @GET("myStatement/detail/{id}")
-    fun getMyStatementDetail(@Header("token") token: String, @Path("id") id: String?): Call<ExtractItemDetailResponse>
-
-
-
+    fun getMyStatementDetail(
+        @Header("token") token: String, @Path("id") id: String
+    ): Call<ExtractItemDetailResponse>
 }
